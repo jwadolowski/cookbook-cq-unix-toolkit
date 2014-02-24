@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #
 # Cookbook Name:: cq-unix-toolkit
 # Recipe:: default
@@ -16,3 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Install git
+# -----------------------------------------------------------------------------
+include_recipe 'git'
