@@ -9,4 +9,3 @@ default[:cq_unix_toolkit][:repository][:revison] = 'v1.0.0'
 default[:cq_unix_toolkit][:user] = 'root'
 default[:cq_unix_toolkit][:group] = 'root'
 default[:cq_unix_toolkit][:checkout_dir] = '/opt/scripts/CQ-Unix-Toolkit'
-default[:cq_unix_toolkit][:install?] = false

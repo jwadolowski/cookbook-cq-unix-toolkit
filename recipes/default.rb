@@ -39,15 +39,4 @@ git node[:cq_unix_toolkit][:checkout_dir] do
   repository node[:cq_unix_toolkit][:repository][:url]
   reference node[:cq_unix_toolkit][:repository][:revison]
   action :sync
-  notifies :run, 'bash[install toolkit]'
-end
-
-# CQ UNIX Toolkit installation to /usr/local/bin
-# -----------------------------------------------------------------------------
-bash 'install toolkit' do
-  user 'root'
-  cwd node[:cq_unix_toolkit][:checkout_dir]
-  code "echo 'Y' | ./install"
-  only_if { node[:cq_unix_toolkit][:install?] == true }
-  action :nothing
 end
