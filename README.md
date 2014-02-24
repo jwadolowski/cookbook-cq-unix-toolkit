@@ -49,7 +49,7 @@ include_recipe 'cq-unix-toolkit'
 
 ## default
 
-Installs latest stable version of CQ Unix Toolkit in specified directory.
+Installs the latest stable version of CQ Unix Toolkit in specified directory.
 
 # Author
 
