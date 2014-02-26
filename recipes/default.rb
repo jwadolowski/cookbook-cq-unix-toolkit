@@ -1,4 +1,3 @@
-# encoding: UTF-8
 #
 # Cookbook Name:: cq-unix-toolkit
 # Recipe:: default

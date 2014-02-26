@@ -1,4 +1,3 @@
-# encoding: UTF-8
 name             'cq-unix-toolkit'
 maintainer       'Jakub Wadolowski'
 maintainer_email 'jakub.wadolowski@cognifide.com'

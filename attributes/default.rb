@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 # Repository settings
 default[:cq_unix_toolkit][:repository][:url] =
   'https://github.com/Cognifide/CQ-Unix-Toolkit.git'
