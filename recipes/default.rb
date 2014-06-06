@@ -16,3 +16,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Install git
+# -----------------------------------------------------------------------------
+include_recipe 'git'
+
+# Create installation directory
+# -----------------------------------------------------------------------------
+directory node[:cq_unix_toolkit][:install_dir] do
+  owner node[:cq_unix_toolkit][:user]
+  group node[:cq_unix_toolkit][:group]
+  mode '0755'
+  recursive true
+
+  action :create
+end
+
+# Checkout Git repository
+# -----------------------------------------------------------------------------
+git node[:cq_unix_toolkit][:install_dir] do
+  repository node[:cq_unix_toolkit][:repository][:url]
+  reference node[:cq_unix_toolkit][:repository][:revison]
+  action :sync
+end
