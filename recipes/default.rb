@@ -23,9 +23,9 @@ include_recipe 'git'
 
 # Create installation directory
 # -----------------------------------------------------------------------------
-directory node[:cq_unix_toolkit][:install_dir] do
-  owner node[:cq_unix_toolkit][:user]
-  group node[:cq_unix_toolkit][:group]
+directory node['cq_unix_toolkit']['install_dir'] do
+  owner node['cq_unix_toolkit']['user']
+  group node['cq_unix_toolkit']['group']
   mode '0755'
   recursive true
 
@@ -34,8 +34,8 @@ end
 
 # Checkout Git repository
 # -----------------------------------------------------------------------------
-git node[:cq_unix_toolkit][:install_dir] do
-  repository node[:cq_unix_toolkit][:repository][:url]
-  reference node[:cq_unix_toolkit][:repository][:revison]
+git node['cq_unix_toolkit']['install_dir'] do
+  repository node['cq_unix_toolkit']['repository']['url']
+  reference node['cq_unix_toolkit']['repository']['revison']
   action :sync
 end
