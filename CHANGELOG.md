@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the cq-unix-toolkit cookbook.
 
+## v1.1.1
+- CQ UNIX Toolkit version bumped to v1.1.1
+
 ## v1.1.0
 - CQ UNIX Toolkit version bumped to v1.1.0
 - Berkshelf 3 compatibility
