@@ -12,5 +12,4 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[cq-unix-toolkit::default]
     attributes:
