@@ -19,6 +19,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.run_list = [
         'recipe[cq-unix-toolkit::default]'
     ]
-    chef.log_level = :debug
   end
 end
