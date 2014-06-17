@@ -3,8 +3,9 @@
 This file is used to list changes made in each version of the cq-unix-toolkit cookbook.
 
 ## v1.1.0
-- CQ UNIX Toolkit version bumped to v.1.1.0
+- CQ UNIX Toolkit version bumped to v1.1.0
 - Berkshelf 3 compatibility
+- Foodcritic fixes
 
 ## v1.0.0
 - First public release of the cookbook
