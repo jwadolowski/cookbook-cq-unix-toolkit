@@ -2,15 +2,7 @@
 
 This cookbook installs [CQ Unix Toolkit](https://github.com/Cognifide/CQ-Unix-Toolkit).
 
-More information can be found [here](http://www.cognifide.com/blogs/cq/cq-unix-toolkit/).
-
-# Requirements
-
-## Chef
-
-* Chef 10.X.Y or Chef 11.X.Y
-
-## Platform
+## Supported Platforms
 
 The following platform families are supported:
 
@@ -19,38 +11,70 @@ The following platform families are supported:
 
 Since this cookbook is rather simple there's a chance it will work flawlessly on other platforms, however it hasn't been tested against any other operating system except those mentioned above.
 
-## Cookbooks
+## Attributes
 
-* [git](https://github.com/opscode-cookbooks/git)
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['cq_unix_toolkit']['repository']['url']</tt></td>
+    <td>String</td>
+    <td>URL to CQ Unix Toolkit repository</td>
+    <td><tt>https://github.com/Cognifide/CQ-Unix-Toolkit.git</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['cq_unix_toolkit']['repository']['revison']</tt></td>
+    <td>String</td>
+    <td>Git revision/tag</td>
+    <td><tt>v1.1.0</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['cq_unix_toolkit']['user']</tt></td>
+    <td>String</td>
+    <td>The owner of cloned repository</td>
+    <td><tt>root</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['cq_unix_toolkit']['group']</tt></td>
+    <td>String</td>
+    <td>Group which owns Git workspace</td>
+    <td><tt>root</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['cq_unix_toolkit']['install_dir']</tt></td>
+    <td>String</td>
+    <td>Installation directory</td>
+    <td><tt>/opt/scripts/CQ-Unix-Toolkit</tt></td>
+  </tr>
+</table>
 
-# Usage
+## Usage
 
-Add a depencency on cq-unix-toolkit to your cookbook's `metadata.rb`:
+### cq-unix-toolkit::default
 
+Include `cq-unix-toolkit` in your node's `run_list`:
+
+```json
+{
+  "run_list": [
+    "recipe[cq-unix-toolkit::default]"
+  ]
+}
 ```
-depends 'cq-unix-toolkit'
-```
 
-To install CQ Unix Toolkit include default recipe in one of your cookbook's recipes:
+## Contributing
 
-```
-include_recipe 'cq-unix-toolkit'
-```
+1. Fork the repository on Github
+2. Create a named feature branch (i.e. `add-new-recipe`)
+3. Write your change
+4. Write tests for your change (if applicable)
+5. Run the tests, ensuring they all pass
+6. Submit a Pull Request
 
-# Attributes
-
-* `node[:cq_unix_toolkit][:repository][:url]` - URL to CQ Unix Toolkit repository
-* `node[:cq_unix_toolkit][:repository][:revison]` - git revision/tag
-* `node[:cq_unix_toolkit][:user]` - the owner of Git workspace
-* `node[:cq_unix_toolkit][:group]` - the group which owns Git workspace
-* `node[:cq_unix_toolkit][:install_dir]` - default installation directory
-
-# Recipes
-
-## default
-
-Installs the latest stable version of CQ Unix Toolkit in specified directory.
-
-# Author
+## License and Authors
 
 Author:: Jakub Wadolowski (<jakub.wadolowski@cognifide.com>)
