@@ -30,7 +30,7 @@ Since this cookbook is rather simple there's a chance it will work flawlessly on
     <td><tt>['cq_unix_toolkit']['repository']['revison']</tt></td>
     <td>String</td>
     <td>Git revision/tag</td>
-    <td><tt>v1.1.0</tt></td>
+    <td><tt>v1.1.1</tt></td>
   </tr>
   <tr>
     <td><tt>['cq_unix_toolkit']['user']</tt></td>
