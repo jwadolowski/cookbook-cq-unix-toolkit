@@ -21,31 +21,31 @@ Since this cookbook is rather simple there's a chance it will work flawlessly on
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['cq_unix_toolkit']['repository']['url']</tt></td>
+    <td><tt>['cq-unix-toolkit']['repository']['url']</tt></td>
     <td>String</td>
     <td>URL to CQ Unix Toolkit repository</td>
     <td><tt>https://github.com/Cognifide/CQ-Unix-Toolkit.git</tt></td>
   </tr>
   <tr>
-    <td><tt>['cq_unix_toolkit']['repository']['revison']</tt></td>
+    <td><tt>['cq-unix-toolkit']['repository']['revison']</tt></td>
     <td>String</td>
     <td>Git revision/tag</td>
     <td><tt>v1.2.0</tt></td>
   </tr>
   <tr>
-    <td><tt>['cq_unix_toolkit']['user']</tt></td>
+    <td><tt>['cq-unix-toolkit']['user']</tt></td>
     <td>String</td>
     <td>The owner of cloned repository</td>
     <td><tt>root</tt></td>
   </tr>
   <tr>
-    <td><tt>['cq_unix_toolkit']['group']</tt></td>
+    <td><tt>['cq-unix-toolkit']['group']</tt></td>
     <td>String</td>
     <td>Group which owns Git workspace</td>
     <td><tt>root</tt></td>
   </tr>
   <tr>
-    <td><tt>['cq_unix_toolkit']['install_dir']</tt></td>
+    <td><tt>['cq-unix-toolkit']['install_dir']</tt></td>
     <td>String</td>
     <td>Installation directory</td>
     <td><tt>/opt/scripts/CQ-Unix-Toolkit</tt></td>
