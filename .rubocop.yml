@@ -1,2 +1,9 @@
+AllCops:
+    Exclude:
+        - 'Vagrantfile'
+        - 'metadata.rb'
+        - 'Thorfile'
+        - 'Berksfile'
+
 Encoding:
     Enabled: false
