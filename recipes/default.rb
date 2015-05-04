@@ -36,6 +36,6 @@ end
 # -----------------------------------------------------------------------------
 git node['cq-unix-toolkit']['install_dir'] do
   repository node['cq-unix-toolkit']['repository']['url']
-  reference node['cq-unix-toolkit']['repository']['revison']
+  reference node['cq-unix-toolkit']['repository']['revision']
   action :sync
 end
