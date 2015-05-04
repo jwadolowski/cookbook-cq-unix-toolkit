@@ -20,7 +20,7 @@
 # Repository settings
 default['cq-unix-toolkit']['repository']['url'] =
   'https://github.com/Cognifide/CQ-Unix-Toolkit.git'
-default['cq-unix-toolkit']['repository']['revison'] = '1.2-dev'
+default['cq-unix-toolkit']['repository']['revision'] = '1.2-dev'
 
 # General settings
 default['cq-unix-toolkit']['user'] = 'root'

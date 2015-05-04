@@ -27,7 +27,7 @@ Since this cookbook is rather simple there's a chance it will work flawlessly on
     <td><tt>https://github.com/Cognifide/CQ-Unix-Toolkit.git</tt></td>
   </tr>
   <tr>
-    <td><tt>['cq-unix-toolkit']['repository']['revison']</tt></td>
+    <td><tt>['cq-unix-toolkit']['repository']['revision']</tt></td>
     <td>String</td>
     <td>Git revision/tag</td>
     <td><tt>v1.2.0</tt></td>
