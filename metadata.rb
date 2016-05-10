@@ -6,7 +6,7 @@ description      'Installs/Configures cq-unix-toolkit'
 long_description 'Installs/Configures cq-unix-toolkit'
 version          '1.2.0'
 
-depends          'git', '~> 4.1.0'
+depends          'git'
 
 supports         'debian'
 supports         'centos'
