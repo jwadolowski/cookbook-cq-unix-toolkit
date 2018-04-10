@@ -2,7 +2,7 @@
 # Cookbook Name:: cq-unix-toolkit
 # Recipe:: default
 #
-# Copyright (C) 2014 Jakub Wadolowski
+# Copyright (C) 2018 Jakub Wadolowski
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ include_recipe 'git'
 
 # Create installation directory
 # -----------------------------------------------------------------------------
-directory node['cq_unix_toolkit']['install_dir'] do
-  owner node['cq_unix_toolkit']['user']
-  group node['cq_unix_toolkit']['group']
+directory node['cq-unix-toolkit']['install_dir'] do
+  owner node['cq-unix-toolkit']['user']
+  group node['cq-unix-toolkit']['group']
   mode '0755'
   recursive true
 
@@ -34,8 +34,8 @@ end
 
 # Checkout Git repository
 # -----------------------------------------------------------------------------
-git node['cq_unix_toolkit']['install_dir'] do
-  repository node['cq_unix_toolkit']['repository']['url']
-  reference node['cq_unix_toolkit']['repository']['revison']
+git node['cq-unix-toolkit']['install_dir'] do
+  repository node['cq-unix-toolkit']['repository']['url']
+  reference node['cq-unix-toolkit']['repository']['revision']
   action :sync
 end

@@ -2,7 +2,7 @@
 # Cookbook Name:: cq-unix-toolkit
 # Attributes:: default
 #
-# Copyright (C) 2014 Jakub Wadolowski
+# Copyright (C) 2018 Jakub Wadolowski
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@
 #
 
 # Repository settings
-default['cq_unix_toolkit']['repository']['url'] =
+default['cq-unix-toolkit']['repository']['url'] =
   'https://github.com/Cognifide/CQ-Unix-Toolkit.git'
-default['cq_unix_toolkit']['repository']['revison'] = 'v1.1.1'
+default['cq-unix-toolkit']['repository']['revision'] = '1.2-dev'
 
 # General settings
-default['cq_unix_toolkit']['user'] = 'root'
-default['cq_unix_toolkit']['group'] = 'root'
-default['cq_unix_toolkit']['install_dir'] = '/opt/scripts/CQ-Unix-Toolkit'
+default['cq-unix-toolkit']['user'] = 'root'
+default['cq-unix-toolkit']['group'] = 'root'
+default['cq-unix-toolkit']['install_dir'] = '/opt/scripts/CQ-Unix-Toolkit'
