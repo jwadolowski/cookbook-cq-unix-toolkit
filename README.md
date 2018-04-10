@@ -1,80 +1,45 @@
-# cq-unix-toolkit cookbook
+# CQ UNIX Toolkit cookbook 
 
 This cookbook installs [CQ Unix Toolkit](https://github.com/Cognifide/CQ-Unix-Toolkit).
 
-## Supported Platforms
+# Table of contents
 
-The following platform families are supported:
+* [Supported platforms](#supported-platforms)
+    * [Operating systems](#operating-systems)
+    * [Chef versions](#chef-versions)
+* [Attributes](#attributes)
+* [Recipes](#recipes)
+    * [default.rb](#defaultrb)
+* [Author](#author)
 
-* Debian
-* RHEL
+# Supported platforms
 
-Since this cookbook is rather simple there's a chance it will work flawlessly on other platforms, however it hasn't been tested against any other operating system except those mentioned above.
+## Operating systems
 
-## Attributes
+* CentOS/RHEL 6.x
+* CentOS/RHEL 7.x
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['cq-unix-toolkit']['repository']['url']</tt></td>
-    <td>String</td>
-    <td>URL to CQ Unix Toolkit repository</td>
-    <td><tt>https://github.com/Cognifide/CQ-Unix-Toolkit.git</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['cq-unix-toolkit']['repository']['revision']</tt></td>
-    <td>String</td>
-    <td>Git revision/tag</td>
-    <td><tt>v1.2.0</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['cq-unix-toolkit']['user']</tt></td>
-    <td>String</td>
-    <td>The owner of cloned repository</td>
-    <td><tt>root</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['cq-unix-toolkit']['group']</tt></td>
-    <td>String</td>
-    <td>Group which owns Git workspace</td>
-    <td><tt>root</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['cq-unix-toolkit']['install_dir']</tt></td>
-    <td>String</td>
-    <td>Installation directory</td>
-    <td><tt>/opt/scripts/CQ-Unix-Toolkit</tt></td>
-  </tr>
-</table>
+## Chef versions
 
-## Usage
+* Chef 12.x
 
-### cq-unix-toolkit::default
+# Attributes
 
-Include `cq-unix-toolkit` in your node's `run_list`:
+| Key                                                 | Type     | Description                       | Default                                          |
+| --------------------------------------------------- | -------- | --------------------------------- | ------------------------------------------------ |
+| `node['cq-unix-toolkit']['repository']['url']`      | `String` | URL to CQ UNIX Toolkit repository | https://github.com/Cognifide/CQ-Unix-Toolkit.git |
+| `node['cq-unix-toolkit']['repository']['revision']` | `String` | Git revision/tag                  | `1.2-dev`                                        |
+| `node['cq-unix-toolkit']['user']`                   | `String` | The owner of cloned repository    | `root`                                           |
+| `node['cq-unix-toolkit']['group']`                  | `String` | Group which owns Git workspace    | `root`                                           |
+| `node['cq-unix-toolkit']['install_dir']`            | `String` | Installation directory            | `/opt/scripts/CQ-Unix-Toolkit`                   |
 
-```json
-{
-  "run_list": [
-    "recipe[cq-unix-toolkit::default]"
-  ]
-}
-```
+# Recipes
 
-## Contributing
+## default.rb
 
-1. Fork the repository on Github
-2. Create a named feature branch (i.e. `add-new-recipe`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request
+Installs CQ UNIX Toolkit by cloning official Git repository into directory of
+your choice
 
-## License and Authors
+# Author
 
-Author:: Jakub Wadolowski (<jakub.wadolowski@cognifide.com>)
+Jakub Wadolowski (<jakub.wadolowski@cognifide.com>)

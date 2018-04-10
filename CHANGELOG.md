@@ -1,15 +1,6 @@
-# cq-unix-toolkit cookbook CHANGELOG
+# v1.2.1 (2018-04-10)
 
-This file is used to list changes made in each version of the cq-unix-toolkit cookbook.
+First public release of CQ UNIX Toolkit cookbook!
 
-## v1.1.1
-- CQ UNIX Toolkit version bumped to v1.1.1
-
-## v1.1.0
-- CQ UNIX Toolkit version bumped to v1.1.0
-- Berkshelf 3 compatibility
-- Foodcritic fixes
-
-## v1.0.0
-- First public release of the cookbook
-- Supports installation of the latest stable version of CQ Unix Toolkit (v1.0.0)
+Due to historical reasons versioning has to start with 1.2.1. By default
+`1.2-dev` branch of CQ UNIX Toolkit gets deployed.
