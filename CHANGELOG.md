@@ -1,3 +1,9 @@
+# v1.3.0 (2018-04-10)
+
+* `git` cookbook dependency removed
+* `source_url` and `issues_url` corrected
+* Chef client 13.x and 14.x are the only supported versions at the moment
+
 # v1.2.2 (2018-04-10)
 
 * Rakefile added to simplify releases
