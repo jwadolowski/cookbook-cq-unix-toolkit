@@ -1,9 +1,6 @@
-AllCops:
-    Exclude:
-        - 'Vagrantfile'
-        - 'metadata.rb'
-        - 'Thorfile'
-        - 'Berksfile'
-
-Encoding:
-    Enabled: false
+Metrics/LineLength:
+  Enabled: true
+  Max: 80
+  IgnoredPatterns: ['(\A|\s)#']
+  Exclude:
+    - 'Berksfile'
