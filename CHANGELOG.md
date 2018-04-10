@@ -2,6 +2,7 @@
 
 * Rakefile added to simplify releases
 * Documentation clean up
+* Redundant files removed
 
 # v1.2.1 (2016-05-10)
 
