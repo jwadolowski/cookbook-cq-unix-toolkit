@@ -1,3 +1,8 @@
+# v2.0.0 (2020-11-24)
+
+* Chef 16 support
+* Improved support for RHEL/CentOS 6.x when Chef Infra Client 16.x is used
+
 # v1.3.0 (2018-04-10)
 
 * `git` cookbook dependency removed
