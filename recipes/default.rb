@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: cq-unix-toolkit
+# Cookbook:: cq-unix-toolkit
 # Recipe:: default
 #
-# Copyright (C) 2018 Jakub Wadolowski
+# Copyright:: (C) 2018 Jakub Wadolowski
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +17,41 @@
 # limitations under the License.
 #
 
-# Install git
 # -----------------------------------------------------------------------------
-package 'git'
+# Install git
+#
+# This logic exists to address inital Git sync problem which occur on
+# CentOS/RHEL 6.x when Chef Infra Client 16.x was used:
+#
+# Mixlib::ShellOut::ShellCommandFailed
+# ------------------------------------
+# Expected process to exit with [0], but received '129'
+# ---- Begin output of git branch -u origin/1.2-dev ----
+# STDOUT:
+# STDERR: error: unknown switch `u'
+#
+# Git 1.7.1 is the latest version available on CentOS/RHEL 6.x. Unfortunately
+# git resource implementation in Chef 16.x assumes "-u" option is available and
+# can be used to define upstream directly at "git branch" level: "git branch -u
+# <REMOTE>/<REVISION>". To mitigate the problem more recent version of Git
+# client gets installed via git cookbook
+#
+# https://github.com/chef/chef/blame/v16.6.14/lib/chef/provider/git.rb#L244
+# -----------------------------------------------------------------------------
+if platform_family?('rhel') && platform?('centos', 'redhat') && node['platform_version'].to_i == 6
+  # Compile Git client from sources
+  git_client 'source' do
+    provider Chef::Provider::GitClient::Source
+    source_prefix node['git']['prefix']
+    source_version node['git']['version']
 
+    action :install
+  end
+else
+  package 'git'
+end
+
+# -----------------------------------------------------------------------------
 # Create installation directory
 # -----------------------------------------------------------------------------
 directory node['cq-unix-toolkit']['install_dir'] do
@@ -32,6 +63,7 @@ directory node['cq-unix-toolkit']['install_dir'] do
   action :create
 end
 
+# -----------------------------------------------------------------------------
 # Checkout Git repository
 # -----------------------------------------------------------------------------
 git node['cq-unix-toolkit']['install_dir'] do
